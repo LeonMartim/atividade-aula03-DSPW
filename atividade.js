@@ -1,6 +1,8 @@
 // 1. Importando o array de livros da nossa "base de dados"
 const livros = require('./biblioteca');
 
+console.log(livros);
+
 // ------------------------------------------------------------------------
 // ATIVIDADE 1: Encontrar livros de um gênero específico
 //
@@ -9,11 +11,16 @@ const livros = require('./biblioteca');
 // ------------------------------------------------------------------------
 
 // Sua vez
+// Função tradicional para filtrar por gênero
+function encontrarLivrosPorGenero(genero) {
+    return livros.filter(livro => livros.genero === genero)
+}
+
 
 // Teste da Atividade 1
 console.log('--- Atividade 1: Livros de Ficção Científica (Função Tradicional) ---');
-// const livrosDeFiccao = encontrarLivrosPorGenero('Ficção Científica');
-// console.log(livrosDeFiccao);
+const livrosDeFiccao = encontrarLivrosPorGenero('Ficção Científica');
+console.log(livrosDeFiccao);
 
 
 // ------------------------------------------------------------------------
@@ -22,14 +29,18 @@ console.log('--- Atividade 1: Livros de Ficção Científica (Função Tradicion
 // Faça a mesma função da Atividade 1, mas agora usando Arrow Function.
 // ------------------------------------------------------------------------
 
+const encontrarLivrosPorGeneroArrow = (genero) => { return livros.map(livro => livro.genero === genero) };
+
+
+
 
 // Sua vez
 
 
 // Teste da Atividade 2
 console.log('\n--- Atividade 2: Livros de Distopia (Arrow Function) ---');
-// const livrosDeDistopia = encontrarLivrosPorGeneroArrow('Distopia');
-// console.log(livrosDeDistopia);
+const livrosDeDistopia = encontrarLivrosPorGeneroArrow('Distopia');
+console.log(livrosDeDistopia);
 
 
 // ------------------------------------------------------------------------
